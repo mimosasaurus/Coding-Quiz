@@ -11,7 +11,7 @@ var countdown
 var questionIndex = 0
 var NextQuestion = null
 var currentQuestion
-
+// add questions
 var questions = [
     {
         question: "What is 'var' shorthand for?",
@@ -58,7 +58,7 @@ var questions = [
             {text: "1985", correct: false},
     ]},
 ]
-
+//add timer function
 function timer(callback, delay) {
     var id, started, remaining = delay, running
 
@@ -101,6 +101,7 @@ function setNextQuestion(){
     return currentQuestion  
 
 }
+//begin quiz
 function startQuiz () {
     console.log('Begin!')
     countdown=new timer(function(){
@@ -131,6 +132,7 @@ function startQuiz () {
     testContainterElement.classList.remove("hide")
     startButton.classList.add("hide")
 }
+//subtract time for wrong answer
 function checkAnswer(index){
     let correct= currentQuestion.answer[index].correct
     questions[questionIndex].correct=correct
